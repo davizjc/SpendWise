@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBudget2">
+
+<!--header-->
+<!--    back icon-->
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="36dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onBackClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+<!--    title-->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/add_new_budget"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toEndOf="@+id/backIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    horizontal line separator-->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <TextView
+        android:id="@+id/budget_text_category"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="60dp"
+        android:text="Category"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backIcon" />
+
+    <Spinner
+        android:id="@+id/budget_spinner_category"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/budget_text_category"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+    <TextView
+        android:id="@+id/budget_text_icon"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Icon"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_text_category" />
+
+    <Spinner
+        android:id="@+id/budget_spinner_icon"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/budget_text_icon"
+        app:layout_constraintTop_toBottomOf="@+id/budget_spinner_category" />
+
+    <TextView
+        android:id="@+id/budget_text_amount"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Amount"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_text_icon" />
+
+    <EditText
+        android:id="@+id/budget_textbox_amount"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/budget_text_amount"
+        app:layout_constraintTop_toBottomOf="@+id/budget_spinner_icon" />
+
+    <TextView
+        android:id="@+id/budget_text_desc"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Description"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_text_amount" />
+
+    <EditText
+        android:id="@+id/budget_textbox_desc"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/budget_text_desc"
+        app:layout_constraintTop_toBottomOf="@+id/budget_textbox_amount" />
+
+    <TextView
+        android:id="@+id/budget_text_repeat"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Repeat"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_text_desc" />
+
+    <Spinner
+        android:id="@+id/budget_spinner_repeat"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/budget_text_repeat"
+        app:layout_constraintTop_toBottomOf="@+id/budget_textbox_desc" />
+
+    <Button
+        android:id="@+id/budget_button_create_budget"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F5878A"
+        android:text="Create Budget"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/budget_image_cate"
+        android:layout_width="23dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toStartOf="@+id/budget_text_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backIcon"
+        app:srcCompat="@drawable/cate" />
+
+    <ImageView
+        android:id="@+id/budget_image_icon"
+        android:layout_width="23dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/budget_text_icon"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_image_cate"
+        app:srcCompat="@drawable/hand" />
+
+    <ImageView
+        android:id="@+id/budget_image_dollar"
+        android:layout_width="23dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/budget_text_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_image_icon"
+        app:srcCompat="@drawable/dollar" />
+
+    <ImageView
+        android:id="@+id/budget_image_desc"
+        android:layout_width="23dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/budget_text_desc"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_image_dollar"
+        app:srcCompat="@drawable/description" />
+
+
+    <ImageView
+        android:id="@+id/budget_image_repeat"
+        android:layout_width="23dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/budget_text_repeat"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_image_desc"
+        app:srcCompat="@drawable/repeat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
